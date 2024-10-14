@@ -22,6 +22,7 @@ public:
 		if (PosA.X == PosB.X && PosA.Y == PosB.Y) 
 		{ 
 			return true;
+			// true라면 삭제하는 함수를 만들어서 이어 붙이기?
 		}
 		else
 		{
