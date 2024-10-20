@@ -1,43 +1,43 @@
-ï»¿#include <iostream>
+#include <iostream>
 #include <conio.h>
 
-// í•œ ì¤„ ê¸€ìž ìˆ˜ ì œí•œ
+// ÇÑ ÁÙ ±ÛÀÚ ¼ö Á¦ÇÑ
 const int LINECOUNT = 50;
 
-// ì´ë¦„ ê¸€ìž ìˆ˜ ì œí•œ
+// ÀÌ¸§ ±ÛÀÚ ¼ö Á¦ÇÑ
 const int NAMELEN = 10;
 
 class AActor
 {
 public:
-	// ìƒì„±ìžì™€ ë©¤ë²„ ì´ë‹ˆì…œë¼ì´ì €ë¥¼ í†µí•´ ê°ì²´ë¥¼ ë§Œë“¤ë©´ì„œ ë³€ìˆ˜ë“¤ì„ ì´ˆê¸°í™”í•œë‹¤.
-	// ì´ë¦„ì˜ ê²½ìš° ë°°ì—´ì€ ì¸ë±ìŠ¤ë§ˆë‹¤ ì´ˆê¸°í™”í•´ì£¼ì–´ì•¼í•˜ë¯€ë¡œ ë©¤ë²„ ì´ë‹ˆì…œë¼ì´ì €ë¥¼ ì‚¬ìš©í•˜ì§€ ëª»í•œë‹¤.
+	// »ý¼ºÀÚ¿Í ¸â¹ö ÀÌ´Ï¼È¶óÀÌÀú¸¦ ÅëÇØ °´Ã¼¸¦ ¸¸µé¸é¼­ º¯¼öµéÀ» ÃÊ±âÈ­ÇÑ´Ù.
+	// ÀÌ¸§ÀÇ °æ¿ì ¹è¿­Àº ÀÎµ¦½º¸¶´Ù ÃÊ±âÈ­ÇØÁÖ¾î¾ßÇÏ¹Ç·Î ¸â¹ö ÀÌ´Ï¼È¶óÀÌÀú¸¦ »ç¿ëÇÏÁö ¸øÇÑ´Ù.
 	AActor(const char* const _Ptr, int _Att, int _Hp, int _Speed)
 		: Att(_Att), Hp(_Hp), Speed(_Speed)
 	{
 		StrCopy(Name, NAMELEN, _Ptr);
 	}
 
-	// ì´ë¦„ ë³µì‚¬ í•¨ìˆ˜
+	// ÀÌ¸§ º¹»ç ÇÔ¼ö
 	void StrCopy(char* _Arr, int _BufferSize, const char* const _Name)
 	{
-		// _Arr ì´ˆê¸°í™”
+		// _Arr ÃÊ±âÈ­
 		for (int i = 0; i < _BufferSize; i++)
 		{
 			_Arr[i] = 0;
 		}
 
-		//_Nameì˜ ê¸€ìž ìˆ˜ ì„¸ê¸°
+		//_NameÀÇ ±ÛÀÚ ¼ö ¼¼±â
 		int Size = static_cast<int>(strlen(_Name));
-		// _Nameì˜ ê¸€ìž ìˆ˜ë§Œí¼ _Nameì˜ ê°’ì„ _Arrì— ëŒ€ìž…
-		// ë°°ì—´ì˜ ê²½ìš° ê° indexì— ê°’ì„ ì¼ì¼ížˆ ë„£ì–´ì£¼ì–´ì•¼ í•¨.
+		// _NameÀÇ ±ÛÀÚ ¼ö¸¸Å­ _NameÀÇ °ªÀ» _Arr¿¡ ´ëÀÔ
+		// ¹è¿­ÀÇ °æ¿ì °¢ index¿¡ °ªÀ» ÀÏÀÏÈ÷ ³Ö¾îÁÖ¾î¾ß ÇÔ.
 		for (int i = 0; i < Size; i++)
 		{
 			_Arr[i] = _Name[i];
 		}
 	}
 
-	// ìŠ¤í…Œì´í„°ìŠ¤ ì¶œë ¥ í•¨ìˆ˜
+	// ½ºÅ×ÀÌÅÍ½º Ãâ·Â ÇÔ¼ö
 	void StatusRender()
 	{
 		printf_s("%s Staus ", Name);
@@ -47,14 +47,14 @@ public:
 
 		PrintLine(NameLineCount);
 		printf_s("\n");
-		printf_s("ê³µê²©ë ¥ : %d\n", Att);
-		printf_s("ì²´ë ¥ : %d\n", Hp);
+		printf_s("°ø°Ý·Â : %d\n", Att);
+		printf_s("Ã¼·Â : %d\n", Hp);
 		PrintLine(LINECOUNT);
 		printf_s("\n");
 
 	}
 
-	// ë¼ì¸ ê·¸ë¦¬ëŠ” í•¨ìˆ˜
+	// ¶óÀÎ ±×¸®´Â ÇÔ¼ö
 	void PrintLine(int _Count)
 	{
 		for (int i = 0; i < _Count; i++)
@@ -63,37 +63,37 @@ public:
 		}
 	}
 
-	// ì´ë¦„ ê°€ì ¸ì˜¤ëŠ” í•¨ìˆ˜
-	const char* GetName()
+	// ÀÌ¸§ °¡Á®¿À´Â ÇÔ¼ö
+	inline const char* GetName() const
 	{
 		return Name;
 	}
 
-	// ê³µê²©ë ¥ ê°€ì ¸ì˜¤ëŠ” í•¨ìˆ˜
-	const int GetAtt()
+	// °ø°Ý·Â °¡Á®¿À´Â ÇÔ¼ö
+	inline int GetAtt() const
 	{
 		return Att;
 	}
 
-	// ì²´ë ¥ ê°€ì ¸ì˜¤ëŠ” í•¨ìˆ˜
-	const int GetHp()
+	// Ã¼·Â °¡Á®¿À´Â ÇÔ¼ö
+	inline int GetHp() const
 	{
 		return Hp;
 	}
 
-	// í˜„ìž¬ ì†ë ¥ ê°€ì ¸ì˜¤ëŠ” í•¨ìˆ˜
-	const int GetCurSpeed()
+	// ÇöÀç ¼Ó·Â °¡Á®¿À´Â ÇÔ¼ö
+	inline int GetCurSpeed() const
 	{
 		return CurSpeed;
 	}
 
-	// ì†ë ¥ ì •í•˜ëŠ” í•¨ìˆ˜ (ë§¤ íšŒì°¨ë§ˆë‹¤ ì„¤ì •)
+	// ¼Ó·Â Á¤ÇÏ´Â ÇÔ¼ö (¸Å È¸Â÷¸¶´Ù ¼³Á¤)
 	void SetCurSpeed()
 	{
 		CurSpeed = rand() % Speed;
 	}
 
-	// ì²´ë ¥ ê¹Žì´ëŠ” í•¨ìˆ˜
+	// Ã¼·Â ±ðÀÌ´Â ÇÔ¼ö
 	void SetHp(int _Att)
 	{
 		Hp -= _Att;
@@ -110,21 +110,21 @@ protected:
 class Player : public AActor
 {
 public:
-	// í”Œë ˆì´ì–´ëŠ” ìƒìœ„ í´ëž˜ìŠ¤ì¸ AActorì˜ ë³€ìˆ˜ë“¤ì„ ê¸°ë°˜ìœ¼ë¡œ ê°ì²´ê°€ ë§Œë“¤ì–´ì§„ë‹¤.
+	// ÇÃ·¹ÀÌ¾î´Â »óÀ§ Å¬·¡½ºÀÎ AActorÀÇ º¯¼öµéÀ» ±â¹ÝÀ¸·Î °´Ã¼°¡ ¸¸µé¾îÁø´Ù.
 	Player(const char* const _Ptr, int _Att, int _Hp, int _Speed)
 		: AActor(_Ptr, _Att, _Hp, _Speed)
 	{
 
 	}
 private:
-	// í”Œë ˆì´ì–´ ê³ ìœ  ë³€ìˆ˜
+	// ÇÃ·¹ÀÌ¾î °íÀ¯ º¯¼ö
 	int PlayerAttMin = 0;
 };
 
 class Monster : public AActor
 {
 public:
-	// ëª¬ìŠ¤í„°ëŠ” ìƒìœ„ í´ëž˜ìŠ¤ì¸ AActorì˜ ë³€ìˆ˜ë“¤ì„ ê¸°ë°˜ìœ¼ë¡œ ê°ì²´ê°€ ë§Œë“¤ì–´ì§„ë‹¤.
+	// ¸ó½ºÅÍ´Â »óÀ§ Å¬·¡½ºÀÎ AActorÀÇ º¯¼öµéÀ» ±â¹ÝÀ¸·Î °´Ã¼°¡ ¸¸µé¾îÁø´Ù.
 	Monster(const char* const _Ptr, int _Att, int _Hp, int _Speed)
 		: AActor(_Ptr, _Att, _Hp, _Speed)
 	{
@@ -132,8 +132,8 @@ public:
 	}
 };
 
-// ì „íˆ¬í•„ë“œ í´ëž˜ìŠ¤
-// ì „íˆ¬ ê´€ë ¨
+// ÀüÅõÇÊµå Å¬·¡½º
+// ÀüÅõ °ü·Ã
 class FightField
 {
 public:
@@ -144,7 +144,7 @@ public:
 
 	void DamageRender(AActor& _Att, AActor& _Def)
 	{
-		printf_s("%s ê°€ %së¥¼ ê³µê²©í•´ì„œ %dì˜ ë°ë¯¸ì§€ë¥¼ ìž…í˜”ìŠµë‹ˆë‹¤.\n",
+		printf_s("%s °¡ %s¸¦ °ø°ÝÇØ¼­ %dÀÇ µ¥¹ÌÁö¸¦ ÀÔÇû½À´Ï´Ù.\n",
 			_Att.GetName(), _Def.GetName(), _Att.GetAtt());
 	}
 
@@ -159,7 +159,7 @@ public:
 
 	void SpeedRender(AActor& _Player, AActor& _Monster)
 	{
-		printf_s("%sì˜ ì„ ê³µìž…ë‹ˆë‹¤.\n",
+		printf_s("%sÀÇ ¼±°øÀÔ´Ï´Ù.\n",
 			IsPlayerFirst(_Player, _Monster) == true ? _Player.GetName() : _Monster.GetName());
 	}
 
