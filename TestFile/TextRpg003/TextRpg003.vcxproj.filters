@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="0_Base">
+      <UniqueIdentifier>{7bdf6343-0e89-4987-a0ba-3fbfcf2fa795}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="1_Engine">
+      <UniqueIdentifier>{4a10ccfc-43fc-4554-afb9-9f0b85a6db27}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Contents">
+      <UniqueIdentifier>{0e34bb37-228e-49b2-82b2-20b2d7fbdad2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Contents\0_ContentsBase">
+      <UniqueIdentifier>{aedae7dd-804b-4e37-b940-dca88b217e55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Contents\1_Actor">
+      <UniqueIdentifier>{ca7fb834-1be5-4e23-94fa-c5346250d0c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="2_Contents\2_Map">
+      <UniqueIdentifier>{815d8ecd-5f30-4972-9380-b1b166436e32}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ContentsConst.h">
+      <Filter>0_Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Object.h">
+      <Filter>1_Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusUnit.h">
+      <Filter>2_Contents\0_ContentsBase</Filter>
+    </ClInclude>
+    <ClInclude Include="FightUnit.h">
+      <Filter>2_Contents\0_ContentsBase</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>2_Contents\1_Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>2_Contents\1_Actor</Filter>
+    </ClInclude>
+    <ClInclude Include="Zone.h">
+      <Filter>2_Contents\2_Map</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ContentsConst.cpp">
+      <Filter>0_Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Object.cpp">
+      <Filter>1_Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusUnit.cpp">
+      <Filter>2_Contents\0_ContentsBase</Filter>
+    </ClCompile>
+    <ClCompile Include="FightUnit.cpp">
+      <Filter>2_Contents\0_ContentsBase</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>2_Contents\1_Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>2_Contents\1_Actor</Filter>
+    </ClCompile>
+    <ClCompile Include="Zone.cpp">
+      <Filter>2_Contents\2_Map</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
