@@ -17,11 +17,11 @@ public:
 		std::cout << GetName() << "에 체류 중.\n";
 	}
 
+	bool IsConnecting(UZone* _LinkZone);
+
 	bool Connecting(UZone* _LinkZone);
 
 	bool InterConnecting(UZone* _LinkZone);
-
-	bool IsConnecting(UZone* _LinkZone);
 
 	void ConnectingPrint();
 
