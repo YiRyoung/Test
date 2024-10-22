@@ -19,6 +19,9 @@
     <Filter Include="2_Contents\2_Map">
       <UniqueIdentifier>{815d8ecd-5f30-4972-9380-b1b166436e32}</UniqueIdentifier>
     </Filter>
+    <Filter Include="2_Contents\2_Map\Store">
+      <UniqueIdentifier>{97506c8f-90dc-4b41-b752-e96d82a43bcb}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ContentsConst.h">
@@ -42,6 +45,18 @@
     <ClInclude Include="Zone.h">
       <Filter>2_Contents\2_Map</Filter>
     </ClInclude>
+    <ClInclude Include="HuntZone.h">
+      <Filter>2_Contents\2_Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Town.h">
+      <Filter>2_Contents\2_Map</Filter>
+    </ClInclude>
+    <ClInclude Include="BlackSmith.h">
+      <Filter>2_Contents\2_Map\Store</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>2_Contents\2_Map</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ContentsConst.cpp">
@@ -63,6 +78,19 @@
       <Filter>2_Contents\1_Actor</Filter>
     </ClCompile>
     <ClCompile Include="Zone.cpp">
+      <Filter>2_Contents\2_Map</Filter>
+    </ClCompile>
+    <ClCompile Include="HuntZone.cpp">
+      <Filter>2_Contents\2_Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Town.cpp">
+      <Filter>2_Contents\2_Map</Filter>
+    </ClCompile>
+    <ClCompile Include="TextRpg003.cpp" />
+    <ClCompile Include="BlackSmith.cpp">
+      <Filter>2_Contents\2_Map\Store</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
       <Filter>2_Contents\2_Map</Filter>
     </ClCompile>
   </ItemGroup>

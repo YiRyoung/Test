@@ -62,7 +62,7 @@ void UZone::ConnectingPrint()
 {
 	system("cls");
 	
-	for (size_t i = 0; i < LINKZONEMAX; i++)
+	for (int i = 0; i < LINKZONEMAX; i++)
 	{
 		if (nullptr != LinkZone[i])
 		{
