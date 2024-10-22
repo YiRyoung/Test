@@ -151,6 +151,7 @@
     <ClInclude Include="Player.h" />
     <ClInclude Include="StatusUnit.h" />
     <ClInclude Include="Town.h" />
+    <ClInclude Include="World.h" />
     <ClInclude Include="Zone.h" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,7 @@
     <ClCompile Include="StatusUnit.cpp" />
     <ClCompile Include="TextRpg003.cpp" />
     <ClCompile Include="Town.cpp" />
+    <ClCompile Include="World.cpp" />
     <ClCompile Include="Zone.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
