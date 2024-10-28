@@ -2,6 +2,7 @@
 #include "Player.h"
 #include <EngineCore/EngineAPICore.h>
 #include <EnginePlatform/EngineInput.h>
+#include "Bullet.h"
 
 APlayer::APlayer()
 {
@@ -26,12 +27,6 @@ void APlayer::BeginPlay()
 	UEngineInput::GetInst().BindAction('W', KeyEvent::Press, std::bind(&APlayer::MoveFunction, this, FVector2D::UP));
 }
 
-void APlayer::Tick(float _DeltaTime)
-{
-	// 컴퓨터의 성능과 상관없이 같은 속력으로 오른쪽으로 플레이어를 이동
-	//AddActorLocation(FVector2D::RIGHT * _DeltaTime * Speed);
-}
-
 void APlayer::MoveFunction(FVector2D _Dir/*, AMonster* Monster*/)
 {
 	// 몬스터를 찾아오는 함수가 존재할것이다.
@@ -43,5 +38,15 @@ void APlayer::MoveFunction(FVector2D _Dir/*, AMonster* Monster*/)
 	AddActorLocation(_Dir * DeltaTime * Speed);
 }
 
+void APlayer::Tick(float _DeltaTime)
+{
+	// 컴퓨터의 성능과 상관없이 같은 속력으로 오른쪽으로 플레이어를 이동
+	//AddActorLocation(FVector2D::RIGHT * _DeltaTime * Speed);
+	if (3.0f < UEngineInput::GetInst().IsPreeTime(VK_LBUTTON))
+	{
+		ABullet* Ptr = GetWorld()->SpawnActor<ABullet>();
+		Ptr->SetActorLocation(GetActorLocation());
+	}
+}
 
 

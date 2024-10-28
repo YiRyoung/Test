@@ -29,7 +29,7 @@ public:
 		AActor* ActorPtr = dynamic_cast<AActor*>(NewActor);
 		ActorPtr->World = this;	// 해당 액터의 레벨을 현재 레벨로 설정
 
-		NewActor->BeginePlay();	// 액터의 BeginPlay 실행
+		NewActor->BeginPlay();	// 액터의 BeginPlay 실행
 		AllActors.push_back(NewActor);	// 현재 레벨에 위치한 모든 액터 리스트에 추가
 		return NewActor;
 	}
