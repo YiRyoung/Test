@@ -16,6 +16,9 @@ KirbyContentsCore::~KirbyContentsCore()
 
 void KirbyContentsCore::BeginPlay()
 {
+	// 타이틀 이름 변경
+	UEngineAPICore::GetCore()->GetMainWindow().SetWindowTitle("Kirby's Adventure");
+
 	// 레벨 생성
 	UEngineAPICore::GetCore()->CreateLevel<APlayGameMode, APlayer>("Play");
 

@@ -150,7 +150,7 @@ void UEngineWindow::Open(std::string_view _TitleName)
     // Window라는 이름의 타이틀로 생성
     if (0 == WindowHandle)
     {
-        Create("Kirby's Adventure");
+        Create(_TitleName);
     }
 
     // 제대로 윈도우가 생성되지 않았다면 종료

@@ -22,11 +22,18 @@ public:
 	UEngineWindow& operator=(UEngineWindow&& _Other) noexcept = delete;
 
 	void Create(std::string_view _TitleName, std::string_view _ClassName = "Default");
-	void Open(std::string_view _TitleName = "Kirby's Adventure");
+	void Open(std::string_view _TitleName = "Window");
 
 	inline HDC GetBackBuffer()
 	{
 		return BackBuffer;
+	}
+
+	// 윈도우 타이틀 이름 변경 함수
+	inline void SetWindowTitle(std::string_view Text)
+	{
+		// Window에서 제공하는 함수
+		SetWindowTextA(WindowHandle, Text.data());
 	}
 
 protected:
