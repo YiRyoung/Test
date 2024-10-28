@@ -1,11 +1,11 @@
 #pragma once
 #include <EnginePlatform/EngineWindow.h>
 #include <EngineBase/EngineTimer.h>
+#include "Level.h"
 
 #pragma comment (lib, "EngineBase.lib")
 #pragma comment (lib, "EnginePlatform.lib")
 
-#include "Level.h"
 
 class UContentsCore
 {
@@ -43,6 +43,11 @@ public:
 	UEngineWindow& GetMainWindow()
 	{
 		return EngineMainWindow;
+	}
+
+	float GetDeltaTime()
+	{
+		return DeltaTimer.GetDeltaTime();
 	}
 
 	template<typename GameModeType, typename MainPawnType>
